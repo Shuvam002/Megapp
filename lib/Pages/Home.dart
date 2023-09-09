@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
@@ -63,22 +65,36 @@ class _HomePageState extends State<HomePage> {
                   ),
                   speed: Duration(milliseconds: 200),
                 ),
-                SizedBox(height: 10),
-                AnimatedPositioned(
-                  // Animate the position of "About Us" text
-                  duration: Duration(seconds: 1),
-                  curve: Curves.easeInOut,
-                  top: aboutUsTextPosition,
-                  child: Text(
-                    'The official Tech Club Of Meghnad Saha Institute Of Technology',
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.lato(
-                      fontSize: 13,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 48),
+                SizedBox(height: 8),
+                Stack(children: [
+                  AnimatedPositioned(
+                      duration: const Duration(seconds: 1),
+                      child: Text(
+                        "The official Tech Club of Meghnad Saha Institute of Technology",
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.lato(
+                          fontSize: 13,
+                          color: Colors.white,
+                        ),
+                      ))
+                ]),
+                // Container(
+                //   child: AnimatedPositioned(
+                //     // Animate the position of "About Us" text
+                //     duration: const Duration(seconds: 1),
+                //     curve: Curves.easeInOut,
+                //     top: aboutUsTextPosition,
+                //     child: Text(
+                //       'The official Tech Club Of Meghnad Saha Institute Of Technology',
+                //       textAlign: TextAlign.center,
+                //       style: GoogleFonts.lato(
+                //         fontSize: 13,
+                //         color: Colors.white,
+                //       ),
+                //     ),
+                //   ),
+                // ),
+                SizedBox(height: 38),
                 Text(
                   'About Us',
                   style: GoogleFonts.lato(
@@ -87,7 +103,7 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(height: 17),
+                SizedBox(height: 15),
                 Opacity(
                   opacity: 0.8,
                   child: Container(
