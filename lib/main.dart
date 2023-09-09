@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 // import 'package:google_fonts/google_fonts.dart';
+//import 'package:flutter_video_player/flutter_video_player.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'Pages/Contact_Us.dart';
-import 'Pages/Event.dart';
-import 'Pages/Gallery.dart';
-import 'Pages/Home.dart';
-import 'Pages/Team.dart';
+
+import 'Pages/AllPages.dart';
 
 void main() => runApp(const NavigationBarApp());
 

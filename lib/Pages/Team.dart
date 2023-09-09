@@ -9,7 +9,7 @@ class TeamMember {
   final String linkedinUrl;
   final String facebookUrl;
   final String instagramUrl;
-  final String year; // Added year variable
+  final String year;
 
   TeamMember({
     required this.name,
@@ -150,7 +150,7 @@ class TeamPage extends StatelessWidget {
         instagramUrl: 'https://www.instagram.com/janesmith/',
         year: '4th'),
     TeamMember(
-        name: 'John Doe',
+        name: 'Jahn Doe',
         imagePath: 'assets/image1.jpg',
         linkedinUrl: 'https://www.linkedin.com/in/johndoe/',
         facebookUrl: 'https://www.facebook.com/johndoe/',
@@ -168,12 +168,20 @@ class TeamPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Sort team members by year and then alphabetically
+    teamMembers.sort((a, b) {
+      if (a.year == b.year) {
+        return a.name.compareTo(b.name); // Sort alphabetically if same year
+      }
+      return b.year.compareTo(a.year); // Sort by year in descending order
+    });
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
           'Team',
           style: GoogleFonts.roboto(
-            fontSize: 24, // Adjust font size as needed
+            fontSize: 24,
             fontWeight: FontWeight.bold,
           ),
         ),

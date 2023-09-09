@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
-// import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ContactUsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Contact Us'),
+        title: Text(
+          'Contact Us',
+          style: GoogleFonts.lato(
+            fontSize: 24.0,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 215, 12, 70),
         leading: Transform.scale(
@@ -22,7 +30,7 @@ class ContactUsPage extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/bg4.jpg'),
-            fit: BoxFit.cover, // Make the background image responsive
+            fit: BoxFit.cover,
           ),
           color: Colors.white,
           borderRadius: BorderRadius.circular(2.0),
@@ -37,43 +45,66 @@ class ContactUsPage extends StatelessWidget {
         child: Center(
           child: Container(
             padding: EdgeInsets.all(16.0),
-            width: double.infinity, // Make the container take the full width
-            color: Color.fromRGBO(
-                0, 0, 0, 0.5), // Add a semi-transparent black background
+            width: double.infinity,
+            color: Color.fromRGBO(0, 0, 0, 0.5),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Get in Touch',
-                  style: TextStyle(
+                AnimatedDefaultTextStyle(
+                  duration: Duration(seconds: 1),
+                  style: GoogleFonts.pacifico(
                     fontSize: 24.0,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
+                  child: Text('Get in Touch'),
                 ),
                 SizedBox(height: 16.0),
-                Text(
-                  'Feel free to reach out to us for any inquiries or feedback. We\'re here to help!',
-                  style: TextStyle(
+                AnimatedDefaultTextStyle(
+                  duration: Duration(seconds: 1),
+                  style: GoogleFonts.jetBrainsMono(
                     fontSize: 16.0,
                     color: Colors.white,
+                  ),
+                  child: Text(
+                    'Feel free to reach out to us for any inquiries or feedback. We\'re here to help!',
                   ),
                 ),
                 SizedBox(height: 16.0),
                 ContactButton(
                   icon: Icons.email,
                   label: 'Email Us',
-                  onPressed: () {
-                    // Implement email action
+                  onPressed: () async {
+                    final Uri _emailLaunchUri = Uri(
+                      scheme: 'mailto',
+                      path: 'soumyadeep_d.cse2021@msit.edu.in',
+                    );
+                    final String _emailLaunchUriString =
+                        _emailLaunchUri.toString();
+                    if (await canLaunch(_emailLaunchUriString)) {
+                      await launch(_emailLaunchUriString);
+                    } else {
+                      throw 'Could not launch email';
+                    }
                   },
                 ),
                 SizedBox(height: 16.0),
                 ContactButton(
                   icon: Icons.phone,
                   label: 'Call Us',
-                  onPressed: () {
-                    // Implement call action
+                  onPressed: () async {
+                    final Uri _phoneLaunchUri = Uri(
+                      scheme: 'tel',
+                      path: '+918282866698',
+                    );
+                    final String _phoneLaunchUriString =
+                        _phoneLaunchUri.toString();
+                    if (await canLaunch(_phoneLaunchUriString)) {
+                      await launch(_phoneLaunchUriString);
+                    } else {
+                      throw 'Could not make a phone call';
+                    }
                   },
                 ),
               ],
