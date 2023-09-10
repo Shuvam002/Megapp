@@ -5,6 +5,8 @@ import 'misc/misc.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: LoadingScreen(), // Show the loading screen initially
+    
   ));
 }
