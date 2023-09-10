@@ -56,25 +56,25 @@ class EventPage extends StatelessWidget {
                 ),
                 SizedBox(height: 16.0),
                 EventCard(
-                  title: 'Induction',
+                  title: 'Orientation',
                   description:
                       'Join us for an introduction to our technical club!',
-                  imagePath: 'assets/induction_event.jpg',
+                  imagePath: 'assets/orientation_event.jpeg',
                 ),
                 EventCard(
                   title: 'Workshop',
                   description: 'Learn the latest technologies and skills.',
-                  imagePath: 'assets/workshop_event.jpg',
-                ),
-                EventCard(
-                  title: 'Paridhi',
-                  description: 'Showcase your innovative projects!',
-                  imagePath: 'assets/paradhi_event.jpg',
+                  imagePath: 'assets/workshop_event.jpeg',
                 ),
                 EventCard(
                   title: 'TECH-X-TRA',
                   description: 'Experience a day filled with tech talks.',
-                  imagePath: 'assets/techextra_event.jpg',
+                  imagePath: 'assets/techextra_event.jpeg',
+                ),
+                EventCard(
+                  title: 'Paridhi',
+                  description: 'Showcase your innovative projects!',
+                  imagePath: 'assets/paradhi_event.jpeg',
                 ),
               ],
             ),
