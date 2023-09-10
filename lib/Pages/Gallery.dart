@@ -56,7 +56,7 @@ class GalleryGrid extends StatelessWidget {
               ),
             ),
             MasonryGridView.builder(
-              itemCount: 14,
+              itemCount: 16,
               gridDelegate:
                   const SliverSimpleGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2),

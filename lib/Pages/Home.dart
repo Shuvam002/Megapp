@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_unnecessary_containers
+// ignore_for_file: avoid_unnecessary_containers, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
     super.initState();
 
     // Add an animation that moves the "About Us" text
-    Future.delayed(Duration(seconds: 1), () {
+    Future.delayed(const Duration(seconds: 1), () {
       setState(() {
         aboutUsTextPosition = 0.0; // Move it to the original position
       });
@@ -28,9 +28,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home'),
+        title: const Text('Home'),
         centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 215, 12, 70),
+        backgroundColor: const Color.fromARGB(255, 215, 12, 70),
         leading: Transform.scale(
           scale: 2,
           child: Image.asset(
@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/bg4.jpg'),
             fit: BoxFit.cover,
@@ -55,6 +55,7 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.center, // Center vertically
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                // ignore: deprecated_member_use
                 TyperAnimatedTextKit(
                   // Typing animation for "MEGATRONIX"
                   text: ['MEGATRONIX'],
@@ -63,9 +64,9 @@ class _HomePageState extends State<HomePage> {
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
-                  speed: Duration(milliseconds: 200),
+                  speed: const Duration(milliseconds: 200),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Stack(children: [
                   AnimatedPositioned(
                       duration: const Duration(seconds: 1),
@@ -78,23 +79,8 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ))
                 ]),
-                // Container(
-                //   child: AnimatedPositioned(
-                //     // Animate the position of "About Us" text
-                //     duration: const Duration(seconds: 1),
-                //     curve: Curves.easeInOut,
-                //     top: aboutUsTextPosition,
-                //     child: Text(
-                //       'The official Tech Club Of Meghnad Saha Institute Of Technology',
-                //       textAlign: TextAlign.center,
-                //       style: GoogleFonts.lato(
-                //         fontSize: 13,
-                //         color: Colors.white,
-                //       ),
-                //     ),
-                //   ),
-                // ),
-                SizedBox(height: 38),
+
+                const SizedBox(height: 38),
                 Text(
                   'About Us',
                   style: GoogleFonts.lato(
@@ -103,12 +89,12 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
                 Opacity(
                   opacity: 0.8,
                   child: Container(
                     color: Colors.black.withOpacity(0.6),
-                    padding: EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.all(16.0),
                     child: Column(
                       children: [
                         Text(
@@ -119,7 +105,7 @@ class _HomePageState extends State<HomePage> {
                             color: Colors.white,
                           ),
                         ),
-                        SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Text(
                           'Megatronix, The Official Technical Club Of Meghnad Saha Institute Of Technology, Aims To Be A Platform To Cultivate Ideas And To Build Them Up In A Way That They Are Not Confined Within A Certain Limit. Megatronix Was Founded In 2009 By A Group Of Five Students As A Robotics Club In The College. That Group Of Five Is Now A Team Of Hundred! To Know More, Check Out Our Social Media Platforms.',
                           style: GoogleFonts.lato(
