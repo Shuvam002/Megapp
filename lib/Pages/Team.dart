@@ -101,7 +101,7 @@ class TeamPage extends StatelessWidget {
         year: '3rd'),
     TeamMember(
         name: 'Abhirup Ganguly',
-        imageUrl: 'assets/team/Abhirup_Ganguly.JPG',
+        imageUrl: 'assets/team/Abhirup_Ganguly.jpeg',
         linkedinUrl: 'https://www.linkedin.com/in/abhirup-ganguly-a0a95b24a',
         facebookUrl:
             'https://www.facebook.com/profile.php?id=100090617142614&mibextid=LQQJ4d',
