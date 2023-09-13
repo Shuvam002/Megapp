@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+// import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
 class TeamMember {
   final String name;
