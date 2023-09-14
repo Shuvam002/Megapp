@@ -5,6 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class GalleryPage extends StatelessWidget {
+  const GalleryPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +29,7 @@ class GalleryPage extends StatelessWidget {
           ),
         ),
       ),
-      body: Stack(
+      body: const Stack(
         children: [GalleryGrid()],
       ),
     );
@@ -35,6 +37,8 @@ class GalleryPage extends StatelessWidget {
 }
 
 class GalleryGrid extends StatelessWidget {
+  const GalleryGrid({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
