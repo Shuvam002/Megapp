@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:megatronix_app_11/Pages/AllPages.dart';
 
 class NavigationBarApp extends StatelessWidget {
-  const NavigationBarApp({Key? key});
+  const NavigationBarApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class NavigationBarApp extends StatelessWidget {
 }
 
 class NavigationExample extends StatefulWidget {
-  const NavigationExample({Key? key});
+  const NavigationExample({super.key});
 
   @override
   State<NavigationExample> createState() => _NavigationExampleState();
@@ -23,11 +23,11 @@ class _NavigationExampleState extends State<NavigationExample> {
   final PageController _pageController = PageController(initialPage: 0);
 
   final List<Widget> pages = [
-    HomePage(),
-    EventPage(),
-    ContactUsPage(),
-    GalleryPage(),
-    TeamPage(),
+    const HomePage(),
+    const EventPage(),
+    const ContactUsPage(),
+    const GalleryPage(),
+    const TeamPage(),
   ];
 
   @override
@@ -42,7 +42,8 @@ class _NavigationExampleState extends State<NavigationExample> {
         currentIndex: currentPageIndex,
         onTap: (int index) {
           _pageController.animateToPage(index,
-              duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
+              duration: const Duration(milliseconds: 500),
+              curve: Curves.easeInOut);
         },
 
         items: const <BottomNavigationBarItem>[
