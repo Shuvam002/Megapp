@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class EventPage extends StatelessWidget {
+  const EventPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +18,7 @@ class EventPage extends StatelessWidget {
           ),
         ),
         centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 215, 12, 70),
+        backgroundColor: const Color.fromARGB(255, 215, 12, 70),
         leading: Transform.scale(
           scale: 2, // Increase the scale as needed to enlarge the logo
           child: Image.asset(
@@ -31,7 +33,7 @@ class EventPage extends StatelessWidget {
           width: double.infinity,
           height: double.infinity,
           decoration: BoxDecoration(
-            image: DecorationImage(
+            image: const DecorationImage(
               image: AssetImage('assets/bg1.jpg'),
               fit: BoxFit.cover,
             ),
@@ -42,7 +44,7 @@ class EventPage extends StatelessWidget {
             ),
           ),
           child: SingleChildScrollView(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             child: Column(
               children: [
                 Text(
@@ -54,24 +56,24 @@ class EventPage extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(height: 16.0),
-                EventCard(
+                const SizedBox(height: 16.0),
+                const EventCard(
                   title: 'Orientation',
                   description:
                       'Join us for an introduction to our technical club!',
                   imagePath: 'assets/orientation_event.jpeg',
                 ),
-                EventCard(
+                const EventCard(
                   title: 'Workshop',
                   description: 'Learn the latest technologies and skills.',
                   imagePath: 'assets/workshop_event.jpeg',
                 ),
-                EventCard(
+                const EventCard(
                   title: 'TECH-X-TRA',
                   description: 'Experience a day filled with tech talks.',
                   imagePath: 'assets/techextra_event.jpeg',
                 ),
-                EventCard(
+                const EventCard(
                   title: 'Paridhi',
                   description: 'Showcase your innovative projects!',
                   imagePath: 'assets/paradhi_event.jpeg',
@@ -90,7 +92,8 @@ class EventCard extends StatefulWidget {
   final String description;
   final String imagePath;
 
-  EventCard({
+  const EventCard({
+    super.key,
     required this.title,
     required this.description,
     required this.imagePath,
@@ -111,29 +114,31 @@ class _EventCardState extends State<EventCard> {
           _isHighlighted = true;
         });
 
-        Future.delayed(Duration(milliseconds: 1000), () {
+        Future.delayed(const Duration(milliseconds: 1000), () {
           setState(() {
             _isHighlighted = false;
           });
         });
       },
       child: AnimatedContainer(
-        duration: Duration(milliseconds: 500),
+        duration: const Duration(milliseconds: 500),
         transform:
             _isHighlighted ? Matrix4.rotationZ(6.28319) : Matrix4.identity(),
         child: Card(
           elevation: 4.0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12.0),
-            side: BorderSide(
+            side: const BorderSide(
               color: Color.fromARGB(255, 215, 12, 70), // Red border color
               width: 2.0, // Border width
             ),
           ),
+          color: const Color.fromARGB(255, 59, 58, 67),
           child: Column(
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.vertical(top: Radius.circular(12.0)),
+                borderRadius:
+                    const BorderRadius.vertical(top: Radius.circular(12.0)),
                 child: Image.asset(
                   widget.imagePath,
                   width: double.infinity,
@@ -142,7 +147,7 @@ class _EventCardState extends State<EventCard> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(12.0),
+                padding: const EdgeInsets.all(12.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -152,23 +157,22 @@ class _EventCardState extends State<EventCard> {
                         // Apply the Lato font
                         fontSize: 18.0,
                         fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(255, 241, 208, 218),
+                        color: const Color.fromARGB(255, 241, 208, 218),
                       ),
                     ),
-                    SizedBox(height: 8.0),
+                    const SizedBox(height: 8.0),
                     Text(
                       widget.description,
                       style: GoogleFonts.lato(
                         // Apply the Lato font
-                        color: Color.fromARGB(255, 241, 208, 218),
+                        color: const Color.fromARGB(255, 241, 208, 218),
                       ),
                     ),
                   ],
                 ),
               ),
             ],
-          ),
-          color: Color.fromARGB(255, 59, 58, 67), // Gray background color
+          ), // Gray background color
         ),
       ),
     );
