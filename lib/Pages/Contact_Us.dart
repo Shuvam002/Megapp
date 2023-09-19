@@ -96,7 +96,7 @@ class ContactUsPage extends StatelessWidget {
                 TextButton(
                   onPressed: () async {
                     launchUrlString(
-                      'malito:deysoumyadeep70@gmail.com',
+                      'mailto:deysoumyadeep70@gmail.com',
                     );
                   },
                   style: TextButton.styleFrom(
